@@ -1,18 +1,21 @@
 all: demo
 
+BISON = bison
+FLEX = flex
+
 bison-out = demo.tab.c
 flex-out  = lex.yy.c
 
-# CFLAGS += -ll
+BISON_FLAGS += -d
 
-demo: $(bison-out) $(flex-out)
+demo: main.c $(bison-out) $(flex-out)
 	$(CC) $(CFLAGS) $^
 
 $(flex-out): demo.l
-	flex $^
+	$(FLEX) $^
 
 $(bison-out): demo.y
-	bison -d $^
+	$(BISON) $(BISON_FLAGS) $^
 
 clean:
 	$(RM) demo.tab.c demo.tab.h

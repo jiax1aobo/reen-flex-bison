@@ -1,11 +1,17 @@
-an reentrant flex & bison
+# An reentrant flex & bison
 
+> CONTACT ME: `x1aobo@foxmail.com`
+
+**READ BISON'S MANUAL SECTION `PROLOGUE ALTERNATIVE` FOR DETAIL,**
+**IT CAN HELP YOU TO AVOID THE PROBLEM OF 'Circular Dependency Problem',**
+**MAINLY ABOUT `yyscan_t` AND `YYSTYPE`.**
+
+```
 bison:
 	Needs definition of `yyscan_t'.
-		it's definied in lex.yy.h
-		if no lex.yy.h made,
-		define yyscan_t in grammar file
+		definied in lex.yy.c
 
 flex:
 	Needs definition of `YYSTYPE',
-		it's defined in demo.tab.h
+		defined in demo.tab.c and demo.tab.h (if have)
+```
