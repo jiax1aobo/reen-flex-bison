@@ -1,4 +1,4 @@
-a.out
-demo.tab.c
-demo.tab.h
-lex.yy.c
+*.out
+*.tab.c
+*.tab.h
+*.yy.c
